@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:700|Source+Sans+Pro:700|Ubuntu&display=swap" rel="stylesheet">
+    <title>DOM Starter</title>
+</head>
+<style>
+    html {
+        background-color: rgb(39, 39, 39);
+    }
+
+    .headtext {
+        display: flex;
+        justify-content: center;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 3em;
+        background-color: ;
+    }
+    h1 {
+        color: rgb(39, 39, 39);
+        -webkit-text-stroke-color: rgb(20, 167, 108);
+        -webkit-text-stroke-width: 3px;
+    }
+    .hero {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(116, 116, 116);
+        box-shadow: inset 0px 0px 10px black;
+    }
+    input {
+        margin: .5em;
+        border-radius: 25px;
+        width: 20em;
+        height: 4em;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 100%;
+        box-shadow: 5px 5px 10px black;
+        padding: 2px;
+        border: none;
+
+    }
+    *:focus {
+        outline: none;
+    }
+
+    #x1 {
+        margin-top: 10%;
+    }
+
+    #x4 {
+        margin-bottom: 10%;
+    }
+    .button {
+        display: flex;
+        justify-content: center;
+        margin-top: 5%;
+        
+    }
+    #clickMe {
+        background: linear-gradient(90deg, rgba(20,167,108,1) 1%, rgba(14,116,75,1) 100%);
+        color: white;
+        border-radius: 25px;
+        font-size: 3em;
+        padding: ;
+        width: 40%;
+        height: 1.5em;
+        font-family: 'Ubuntu', sans-serif;
+        border-color: rgb(20, 130, 50);
+        text-shadow: 0px  -1px 0px rgba(0,0,0,.5);
+        box-shadow: 0px 6px 0px rgb(20, 70, 30);
+    }
+
+    .bottomtext {
+        display:flex;
+        justify-content: center;
+        margin: 5%;
+        font-family: 'Open Sans', sans-serif;
+        color: white;
+        font-size: 2em;
+    }
+ 
+</style>
+<body>
+    <div class="headtext">
+    <h1 id="helloWorld">Mad Libs!</h1>
+    </div>
+    <div class="hero">
+    <form id="Form1" type="form">
+        <input type="text" placeholder="Favorite food" id="x1" value=""><br>
+        <input type="text" placeholder="Favorite Color"id="x2" value=""><br>
+        <input type="text" placeholder="Name"id="x3" value=""><br>
+        <input type="text" placeholder="Age"id="x4" value=""><br>
+    </form>
+    <br>
+    </div>
+    <div class="button">
+    <button type="button" id="clickMe">Submit</button>
+    </div>
+   
+    <div class="bottomtext">
+    <span id="mainp"></span>
+    </div>
+</body>
+<script>
+    const button = document.querySelector("button")
+    
+    button.addEventListener("click", function(e){
+        e.preventDefault();
+        
+        mainp.innerHTML = "Hi my name is " + x3.value + " I am " + x4.value + " years old. My favorite food is " + x2.value + " " + x1.value + ", how weird!";
+    })
+</script>
+
+</html>
+
+
