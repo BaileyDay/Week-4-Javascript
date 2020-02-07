@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,16 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:700|Source+Sans+Pro:700|Ubuntu&display=swap" rel="stylesheet">
     <title>DOM Starter</title>
 </head>
+
 <style>
+  
+
     html {
         background-color: rgb(39, 39, 39);
+    }
+
+    body {
+        margin: -7px;
     }
 
     .headtext {
@@ -29,6 +37,8 @@
         justify-content: center;
         background-color: rgb(116, 116, 116);
         box-shadow: inset 0px 0px 10px black;
+        width: 100%;
+        
     }
     input {
         margin: .5em;
@@ -81,19 +91,23 @@
         font-family: 'Open Sans', sans-serif;
         color: white;
         font-size: 2em;
+        visibility: hidden;
     }
  
 </style>
+
 <body>
+
     <div class="headtext">
     <h1 id="helloWorld">Mad Libs!</h1>
     </div>
     <div class="hero">
+        
     <form id="Form1" type="form">
-        <input type="text" placeholder="Favorite food" id="x1" value=""><br>
-        <input type="text" placeholder="Favorite Color"id="x2" value=""><br>
-        <input type="text" placeholder="Name"id="x3" value=""><br>
-        <input type="text" placeholder="Age"id="x4" value=""><br>
+        <input type="text" placeholder="Name" id="x1" value=""><br>
+        <input type="text" placeholder="Age"id="x2" value=""><br>
+        <input type="text" placeholder="Favorite color"id="x3" value=""><br>
+        <input type="text" placeholder="Favorite food"id="x4" value=""><br>
     </form>
     <br>
     </div>
@@ -102,17 +116,43 @@
     </div>
    
     <div class="bottomtext">
-    <span id="mainp"></span>
+    <p>Hi my name is <span class="placeholder">____</span> I am <span class="placeholder">____</span> years old. My favorite food is <span class="placeholder">____</span> <span class="placeholder"> ____ </span>, how weird!</p>
+    
     </div>
+
 </body>
+
 <script>
     const button = document.querySelector("button")
+
+    const values = document.querySelectorAll("input")
     
+    const place = document.querySelectorAll(".placeholder")
+
+    newarray = []
+
+    newarray = Array.from(values)
+
+    
+
+    function parseUser(){
+        place.forEach(function(span, index){
+        span.innerHTML = newarray[index].value
+    })
+    }
+
     button.addEventListener("click", function(e){
         e.preventDefault();
+        parseUser()
+        document.querySelector(".bottomtext").style.visibility = "visible";
         
-        mainp.innerHTML = "Hi my name is " + x3.value + " I am " + x4.value + " years old. My favorite food is " + x2.value + " " + x1.value + ", how weird!";
+    
     })
+
+ 
+    
+
+
 </script>
 
 </html>
